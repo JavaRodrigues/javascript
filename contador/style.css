@@ -1,0 +1,15 @@
+body{
+    font-size: 40px;
+    color: black;
+    backdrop-filter: blur(10px);
+    -webkit-background-filter:blur(10px); ;
+    background-color:rgb(238, 138, 131);
+    text-align: center;
+}
+
+p{
+    font-size:30px;
+}
+id{
+    font-size: 20px;
+}
