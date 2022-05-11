@@ -63,7 +63,7 @@ function calculadora() {
                 }
             }
         }
-    } */
+    }
 
     /* // escolhendo operação
     // usand if && else
