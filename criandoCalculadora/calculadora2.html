@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Calculadora Simples</title>
+          <script>
+        // Função para calcular o resultado
+         function calcular() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operacao = document.getElementById("operacao").value;
+            var resultado;
+    
+        // Realiza a operação selecionada
+                switch (operacao) {
+                    case "+":
+                        resultado = num1 + num2;
+                        break;
+                    case "-":
+                        resultado = num1 - num2;
+                        break;
+                    case "*":
+                        resultado = num1 * num2;
+                        break;
+                    case "/":
+                        resultado = num1 / num2;
+                        break;
+                    default:
+                        resultado = "Operação inválida";
+                        break;
+                }
+    
+                // Exibe o resultado na caixa de texto de resultado
+                document.getElementById("resultado").value = resultado;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculadora Simples</h1>
+        <input type="number" id="num1" placeholder="Digite o número 1">
+        <select id="operacao">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="num2" placeholder="Digite o número 2">
+        <button onclick="calcular()">Calcular</button>
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+    </body>
+    </html>
