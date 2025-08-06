@@ -28,7 +28,6 @@ class ContaBancaria {
 		return this._saldo;
 	}
 }
-
 class ContaCorrente extends ContaBancaria {
 	constructor(agencia, numero, cartaoCredito) {
 		super(agencia, numero);
@@ -44,7 +43,6 @@ class ContaCorrente extends ContaBancaria {
 		return this._cartaoCredito;
 	}
 }
-
 class ContaPoupanca extends ContaBancaria {
 	constructor(agencia, numero) {
 		super(agencia, numero);

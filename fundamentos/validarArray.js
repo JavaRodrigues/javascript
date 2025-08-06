@@ -3,7 +3,7 @@ function validarArray (arr, num){
         if (!arr && !num) throw new ReferenceError("Envie os parametros");
 
         if(typeof arr !== "object")
-            throw new TypeError("Array precisa ser do tipo abject");
+            throw new TypeError("Array precisa ser do tipo object");
 
         if(typeof num !== "number") 
             throw new TypeError("Num precisa ser do tipo number");
@@ -32,4 +32,4 @@ function validarArray (arr, num){
     }
 }
 
-console.log(validarArray([], "a"));   
+console.log(validarArray([], "a"));
