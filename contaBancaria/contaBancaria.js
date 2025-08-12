@@ -8,7 +8,11 @@ class ContaBancaria {
 
 	sacar(valor) {
 		if (valor > this._saldo) {
-			return console.log('Saque negado; saldo insuficiente!');
+            throw new Error('Saque negado; saldo insuficiente!');
+        }
+        
+        if (valor <= 0) {
+			throw new Error('Saque negado; saldo insuficiente!');
 		}
 
 		this._saldo = this._saldo - valor;
@@ -16,6 +20,10 @@ class ContaBancaria {
 	}
 
 	depositar(valor) {
+        if (valor <= 0) {
+			throw new Error('Não pode depositar um valor menor ou igual a zero.');
+		}
+
 		this._saldo = this._saldo + valor;
 		return this._saldo;
 	}
@@ -25,7 +33,7 @@ class ContaBancaria {
 	}
 
 	get saldo() {
-		return this._saldo;
+		return this._saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 	}
 }
 class ContaCorrente extends ContaBancaria {
@@ -58,7 +66,7 @@ class ContaUniversitaria extends ContaBancaria {
 
 	sacar(valor) {
 		if (valor > 500) {
-			return 'Operação negada.';
+			throw new Error('Operação negada. Limite de saque excedido para conta universitária.');
 		}
 
 		this._saldo = this._saldo - valor;
@@ -71,3 +79,7 @@ const contaUni = new ContaUniversitaria(2, 333);
 
 console.log(minhaConta);
 console.log(contaUni);
+
+minhaConta.depositar(500);
+minhaConta.sacar(200);
+console.log(minhaConta.saldo)
