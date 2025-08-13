@@ -2,7 +2,14 @@
   "dependencies": {
     "apexcharts": "^3.35.3",
     "gojs": "^2.2.13",
+    "lodash": "^4.17.21",
     "particles.js": "^2.0.0",
     "scrollmagic": "^2.0.8"
+  },
+  "scripts": {
+    "start:dev": "nodemon controle/breakContinue.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
