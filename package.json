@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "apexcharts": "^3.35.3",
+    "axios": "^1.11.0",
     "gojs": "^2.2.13",
     "lodash": "^4.17.21",
     "particles.js": "^2.0.0",

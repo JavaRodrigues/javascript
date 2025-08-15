@@ -1,2 +1,2 @@
-const saudacoes = require('./passandoParametros')('Ana', 'Lucas', 'João')
+const saudacoes = require('./passandoParametros')('Ana', 'Heitor', 'Roseli', 'Gabriel')
 console.log(saudacoes)
