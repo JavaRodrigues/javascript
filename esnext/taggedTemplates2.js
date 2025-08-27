@@ -1,4 +1,4 @@
-
+// 
 function real(partes, ...valores) {
     const resultado = []
     valores.forEach((valor, indice) => {

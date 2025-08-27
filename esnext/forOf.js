@@ -1,4 +1,4 @@
-for (let letra of "Cod3r") {
+for (let letra of "Java") {
     console.log(letra)
 }
 

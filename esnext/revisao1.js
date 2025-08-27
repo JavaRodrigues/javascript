@@ -11,7 +11,7 @@ const produto = 'iPad'
 console.log(`${produto} é caro!`)
 
 // Destructuring
-const [l, e, ...tras] = "Cod3r"
+const [l, e, ...tras] = "Java"
 console.log(l, e, tras)
 
 const [x, , y] = [1, 2, 3]
