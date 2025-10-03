@@ -1,0 +1,48 @@
+function gerarNumeroAleatorio(min, max) {
+    if (min > max) [max, min] = [min, max];
+    return new Promise(resolve => {
+        const fator = max - min + 1;
+        const aleatorio = parseInt(Math.random() * fator) + min;
+        resolve(aleatorio);
+    })
+}
+gerarNumeroAleatorio(1, 20)
+    .then(num => num * 10)
+    .then(numX10 => `O número gerado foi ${numX10}`)
+    .then(console.log);
+    // .catch(err => console.log(`Erro: ${err}`)) => 
+function esperarPor(tempo = 2000) {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            console.log('Executando promise...')
+            resolve()
+        }, tempo)
+    })
+}       
+esperarPor(2000)
+.then(() => console.log('Executando promise 2...'))
+.then(esperarPor)
+.then(() => console.log('Executando promise 3...'))
+.then(esperarPor)
+.then(() => console.log('Executando promise 4...'))
+.then(esperarPor)
+
+function retornarValor() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(10)
+        }, 5000)
+    })
+}
+async function executar() {
+    let valor = await retornarValor()
+    await esperarPor(1500)
+    console.log(`Async/Await ${valor}`)
+    await esperarPor(1500)
+    console.log(`Async/Await ${valor + 1}`)
+    await esperarPor(1500)
+    console.log(`Async/Await ${valor + 2}`)
+    await esperarPor(1500)
+    console.log(`Async/Await ${valor + 3}`)
+}
+executar()
